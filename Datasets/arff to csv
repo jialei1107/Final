@@ -1,0 +1,17 @@
+from scipy.io import arff
+import pandas as pd 
+
+file_name='/Users/15225/.spyder-py3/emotions.arff'
+
+data,meta=arff.loadarff(file_name)
+#print(data)
+print(meta)
+
+df=pd.DataFrame(data)
+print(df.head())
+#print(df)
+
+#save as csv file
+out_file='/Users/15225/.spyder-py3/emotions.arff.csv'
+output=pd.DataFrame(df)
+output.to_csv(out_file,index=False)
